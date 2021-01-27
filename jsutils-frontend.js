@@ -96,20 +96,19 @@ function delay(callback, ms) {
 //     }
 //   });
 // }
-//
 
 function search_params(){
-
+  
   $( ".searchinpage,.searchinpage-single, .searchinpage-update" ).each(function( index ) {
-    name = $( this ).attr('name');
-    val = $( this ).val();
-    if (val != ''){
+    let name = $( this ).attr('name');
+    let val = $( this ).val();
+    if ( val != ''){
       search_params.set(name, val);
     }else{
       search_params.delete(name);
     }
   });
-  
+
   url.search = search_params.toString();
   window.location.replace(url.toString())
 }
